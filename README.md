@@ -4,7 +4,8 @@
 
 ## YouTube Video
 Check out the tutorial's video on YouTube:
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qhz27TZYsYI/0.jpg)](https://www.youtube.com/watch?v=qhz27TZYsYI)
+
+[![Spring Boot Kafka Tutorial](https://img.youtube.com/vi/QngHCFFsa00/0.jpg)](https://www.youtube.com/watch?v=QngHCFFsa00)
 
 ## Run the App
 ### From the Command Line
@@ -65,4 +66,3 @@ following dependencies:
   <artifactId>jackson-datatype-jsr310</artifactId>
 </dependency>
 ```
-
