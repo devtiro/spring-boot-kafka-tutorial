@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 
@@ -27,6 +28,7 @@ public class KafkaTutorialApplication {
 	}
 
 	@Bean
+	@Profile("!test")
 	public ApplicationRunner runner(final KafkaTemplate<String, String> kafkaTemplate, final KafkaConfigProps kafkaConfigProps) throws JsonProcessingException {
 		final CustomerVisitEvent event = CustomerVisitEvent.builder()
 			.customerId(UUID.randomUUID().toString())
@@ -41,6 +43,7 @@ public class KafkaTutorialApplication {
 	}
 
 	@KafkaListener(topics = "customer.visit")
+	@Profile("!test")
 	public String listens(final String in) {
 		System.out.println(in);
 		return in;
