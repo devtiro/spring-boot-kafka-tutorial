@@ -31,7 +31,7 @@ Here are the available tags:
 Here are the commands used to interact with Kafka in the tutorial:
 
 #### Create a Topic
-```
+```shell
 docker exec broker \
 kafka-topics --bootstrap-server broker:9092 \
              --create \
@@ -39,7 +39,7 @@ kafka-topics --bootstrap-server broker:9092 \
 ```
 
 ### Command Line Consumer
-```
+```shell
 docker exec --interactive --tty broker \
 kafka-console-consumer --bootstrap-server broker:9092 \
                        --topic "customer.visit" \
@@ -47,7 +47,7 @@ kafka-console-consumer --bootstrap-server broker:9092 \
 ```
 
 ### Command Line Producer
-```
+```shell
 docker exec --interactive --tty broker \
    kafka-console-producer --bootstrap-server broker:9092 \
                           --topic "customer.visit"
@@ -56,7 +56,7 @@ docker exec --interactive --tty broker \
 ## Jackson Dependencies
 In order to use Jackson and the module for Java8 DateTimes, use the
 following dependencies:
-```
+```xml
 <dependency>
   <groupId>com.fasterxml.jackson.core</groupId>
   <artifactId>jackson-databind</artifactId>
