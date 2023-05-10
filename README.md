@@ -10,15 +10,15 @@ Check out the tutorial's video on YouTube:
 ## Run the App
 ### From the Command Line
 ```shell
-    docker-compose up -d
-    ./mvnw spring-boot:run
+docker-compose up -d
+./mvnw spring-boot:run
 ```
 ## Tags
 Tags have been used to snapshot the project at certain points in time.
 
 To checkout a branch run the following:
 ```shell
-    git checkout ${TAG_NAME}
+git checkout ${TAG_NAME}
 ```
 
 Here are the available tags:
