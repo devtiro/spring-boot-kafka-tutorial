@@ -1,4 +1,35 @@
-# Create a Topic
+[![Build](https://github.com/devtiro/spring-boot-kafka-tutorial/actions/workflows/github-actions-build.yml/badge.svg)](https://github.com/devtiro/spring-boot-kafka-tutorial/actions/workflows/github-actions-build.yml)
+
+# Devtiro Spring Boot Kafka Tutorial
+
+## YouTube Video
+Check out the tutorial's video on YouTube:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qhz27TZYsYI/0.jpg)](https://www.youtube.com/watch?v=qhz27TZYsYI)
+
+## Run the App
+### From the Command Line
+```shell
+    docker-compose up -d
+    ./mvnw spring-boot:run
+```
+## Tags
+Tags have been used to snapshot the project at certain points in time.
+
+To checkout a branch run the following:
+```shell
+    git checkout ${TAG_NAME}
+```
+
+Here are the available tags:
+
+| Branch name   | Description                               |
+| -----------   | -----------                               |
+| `tutorial`    | The unplished end-result of the tutorial. |
+
+## Kafka Command Line
+Here are the commands used to interact with Kafka in the tutorial:
+
+#### Create a Topic
 ```
 docker exec broker \
 kafka-topics --bootstrap-server broker:9092 \
@@ -6,7 +37,7 @@ kafka-topics --bootstrap-server broker:9092 \
              --topic "customer.visit"
 ```
 
-# Command Line Consumer
+### Command Line Consumer
 ```
 docker exec --interactive --tty broker \
 kafka-console-consumer --bootstrap-server broker:9092 \
@@ -14,14 +45,16 @@ kafka-console-consumer --bootstrap-server broker:9092 \
                        --from-beginning
 ```
 
-# Command Line Producer
+### Command Line Producer
 ```
 docker exec --interactive --tty broker \
    kafka-console-producer --bootstrap-server broker:9092 \
                           --topic "customer.visit"
 ```
 
-# Jackson Dependencies
+## Jackson Dependencies
+In order to use Jackson and the module for Java8 DateTimes, use the
+following dependencies:
 ```
 <dependency>
   <groupId>com.fasterxml.jackson.core</groupId>
